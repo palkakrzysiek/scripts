@@ -1,5 +1,10 @@
 # installation script of Brother DCP-J125 printer and scanner driver for Ubuntu, Debian, Mint Linux etc.
 
+if [ "$(id -u)" != "0" ]; then
+   echo ">You Must Run As Root<" 1>&2
+   exit 1
+fi
+
 #printer
 apt-get install lpr cups
 wget http://www.brother.com/pub/bsc/linux/dlf/dcpj125lpr-1.1.3-1.i386.deb
