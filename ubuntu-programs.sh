@@ -41,9 +41,15 @@ sudo apt-get update
 sudo apt-get install indicator-multiload indicator-keylock
 
 
-sudo apt-get install gnote anki audacious audacity mc cheese-common doxygen doxygen-latex kile texlive-lang-polish git gnote gnuplot goldendict gparted guake inkscape k3b libk3b6-extracodecs sox manpages-pl manpages-pl-dev manpages-posix manpages-posix-dev mplayer okular openjdk-7-jre php5-cli php5-common rhino ruby pidgin samba skype virtualbox vlc wine exuberant-ctags account-plugin-gadugadu compizconfig-settings-manager gimp gimp-plugin-registry touchegg
+sudo apt-get install gnote anki audacious audacity mc cheese-common doxygen doxygen-latex kile texlive-lang-polish git gnote gnuplot goldendict gparted guake inkscape k3b libk3b6-extracodecs sox manpages-pl manpages-pl-dev manpages-posix manpages-posix-dev mplayer okular openjdk-7-jre php5-cli php5-common rhino ruby pidgin samba skype virtualbox vlc wine exuberant-ctags account-plugin-gadugadu compizconfig-settings-manager gimp gimp-plugin-registry touchegg vim-gnome
 
 sudo apt-get remove rhythmbox
+
+echo 'git config --global user.name "Your Name"'
+echo "git config --global user.email you@example.com"
+
+echo -n "press <enter> to continue"
+read continue
 
 # vim
 git clone https://github.com/palkakrzysiek/vim-startup.git
