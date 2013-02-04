@@ -3,6 +3,10 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
+# docs:
+# - convert jpeg to pdf:
+#   [patch]$ convert *.jpeg name.pdf
+
 mkdir temp
 cd temp
 
@@ -33,6 +37,16 @@ sudo dpkg -i google-chrome-stable_current_i386.deb
 sudo add-apt-repository ppa:tualatrix/ppa
 sudo apt-get update && sudo apt-get install ubuntu-tweak
 
+#Jdownloader
+sudo add-apt-repository ppa:jd-team/jdownloader
+sudo apt-get update && sudo apt-get install jdownloader
+echo "run 'jdownloader' separately"
+echo -n "press <enter> to continue"
+read continue
+
+# Calibre
+sudo python -c "import sys; py3 = sys.version_info[0] > 2; u = __import__('urllib.request' if py3 else 'urllib', fromlist=1); exec(u.urlopen('http://status.calibre-ebook.com/linux_installer').read()); main(install_dir='/opt')"
+
 #indicators
 # indicator-keylock indicator-multiload
 sudo add-apt-repository ppa:tsbarnes/indicator-keylock-daily
@@ -41,7 +55,7 @@ sudo apt-get update
 sudo apt-get install indicator-multiload indicator-keylock
 
 
-sudo apt-get install gnote anki audacious audacity mc cheese-common doxygen doxygen-latex kile texlive-lang-polish git gnote gnuplot goldendict gparted guake inkscape k3b libk3b6-extracodecs sox manpages-pl manpages-pl-dev manpages-posix manpages-posix-dev mplayer okular openjdk-7-jre php5-cli php5-common rhino ruby pidgin samba skype virtualbox vlc wine exuberant-ctags account-plugin-gadugadu compizconfig-settings-manager gimp gimp-plugin-registry touchegg vim-gnome
+sudo apt-get install gnote anki audacious audacity mc cheese-common doxygen doxygen-latex kile texlive-lang-polish git gnote gnuplot goldendict gparted guake inkscape k3b libk3b6-extracodecs sox manpages-pl manpages-pl-dev manpages-posix manpages-posix-dev mplayer okular openjdk-7-jre php5-cli php5-common rhino ruby pidgin samba skype virtualbox vlc wine exuberant-ctags account-plugin-gadugadu compizconfig-settings-manager gimp gimp-plugin-registry touchegg vim-gnome whois build-essential imagemagick wammu
 
 sudo apt-get remove rhythmbox
 
