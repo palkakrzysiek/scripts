@@ -11,11 +11,12 @@ mkdir temp
 cd temp
 
 
-#bumblebee
+# bumblebee
 sudo add-apt-repository ppa:bumblebee/stable
 sudo apt-get update
 sudo apt-get install bumblebee bumblebee-nvidia linux-headers-generic
 
+# sudo fdisk -l
 echo "/dev/sda6	/media/dokumenty	ntfs	defaults	0	0" >> /etc/fstab
 
 
