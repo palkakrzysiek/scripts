@@ -187,27 +187,47 @@ OPFTEMPLATEEND = """</spine>
 # MAIN
 ################################################################
 
-UTFINDEX = False
-if len(sys.argv) > 1:
-    FILENAME = sys.argv[1]
-    if sys.argv[1] == '-utf':
-        UTFINDEX = True
-        FILENAME = sys.argv[2]
-    else:
-        FILENAME = sys.argv[1]
-else:
-    print "tab2opf (Stardict->MobiPocket)"
-    print "------------------------------"
-    print "Version: %s" % VERSION
-    print "Copyright (C) 2007 - Klokan Petr Pridal"
-    print
-    print "Usage: python tab2opf.py [-utf] DICTIONARY.tab"
-    print
-    print "ERROR: You have to specify a .tab file"
-    sys.exit(1)
+# fixed filenames: definitions: slo.tab; inflection: odm.txt
+
+#UTFINDEX = False 
+#if len(sys.argv) > 1:
+    #FILENAME = sys.argv[1]
+    #if sys.argv[1] == '-utf':
+        #UTFINDEX = True
+        #FILENAME = sys.argv[2]
+    #else:
+        #FILENAME = sys.argv[1]
+#else:
+    #print "tab2opf (Stardict->MobiPocket)"
+    #print "------------------------------"
+    #print "Version: %s" % VERSION
+    #print "Copyright (C) 2007 - Klokan Petr Pridal"
+    #print
+    #print "Usage: python tab2opf.py [-utf] DICTIONARY.tab"
+    #print
+    #print "ERROR: You have to specify a .tab file"
+    #sys.exit(1)
+
+FILENAME = 'slo.tab'
+UTFINDEX = True
 
 fr = open(FILENAME,'rb')
 name = os.path.splitext(os.path.basename(FILENAME))[0]
+
+odm = {}
+odmianay = open("odm.txt")
+for line in odmianay:
+    try:
+        line = re.search('(?P<hea>[^,]*?), (?P<def>.*)', line)
+        podstawa = line.group('hea')
+        odmiany = line.group('def')
+        odmiana = '<idx:infl inflgrp="odmiany">'
+        for slowo in odmiany.split(', '):
+            odmiana += "<idx:iform name=\"odmiana\" value=\"%s\" />\n" % (slowo)
+        odmiana += '</idx:infl>'
+        odm[podstawa.lower()] = odmiana 
+    except:
+        pass
 
 i = 0
 to = False
@@ -224,7 +244,7 @@ for r in fr.xreadlines():
             to.close()
         to = open("%s%d.html" % (name, i / 10000), 'w')
 
-        to.write("""<?xml version="1.0" encoding="utf-8"?>
+        to.write(u"""<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:idx="www.mobipocket.com" xmlns:mbp="www.mobipocket.com" xmlns:xlink="http://www.w3.org/1999/xlink">
   <body>
     <mbp:pagebreak/>
@@ -242,15 +262,17 @@ for r in fr.xreadlines():
         dt = normalizeUnicode(dt,'cp1252')
         dd = normalizeUnicode(dd,'cp1252')
     dtstrip = normalizeUnicode( dt )
+    if not dt.lower() in odm:
+        odm[dt.lower()] = ''
     dd = dd.replace("\\\\","\\").replace("\\n","<br/>\n")
     to.write("""      <idx:entry name="word" scriptable="yes">
         <h2>
-          <idx:orth>%s</idx:orth><idx:key key="%s">
+          <idx:orth>%s %s</idx:orth><idx:key key="%s">
         </h2>
         %s
       </idx:entry>
       <mbp:pagebreak/>
-""" % (dt, dtstrip, dd))
+""" % (dt, odm[dt.lower()], dtstrip, dd))
     print dt
     i += 1
 
