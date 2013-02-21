@@ -6,7 +6,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 #printer
-apt-get install lpr cups
+apt-get install cups
 wget http://www.brother.com/pub/bsc/linux/dlf/dcpj125lpr-1.1.3-1.i386.deb
 wget http://www.brother.com/pub/bsc/linux/dlf/dcpj125cupswrapper-1.1.3-1.i386.deb
 dpkg  -i  --force-all dcpj125lpr-1.1.3-1.i386.deb

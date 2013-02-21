@@ -1,0 +1,7 @@
+tab dictionary: delete duplicates
+:%s/\(.*\)\t\(.*\)\n\1\t/\1\tI:\<br \/\>\2\<br \/\>\<br \/\>II:\<br \/\>/      
+multidefinition:
+s/\([^\t]*\)\(\~[^\t]*\)\t/\1\t\<h2\>\2\<\/h2\>\<br \/\>/ 
+
+
+:%s/^\(.*\)\t\(.*\)\n\1\t/\1\t\2\<hr \/\>\<br \/\>/      

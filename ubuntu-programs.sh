@@ -6,6 +6,10 @@ fi
 # docs:
 # - convert jpeg to pdf:
 #   [patch]$ convert *.jpeg name.pdf
+# - combine multiple pdf files
+#   gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=finished.pdf file1 file2
+# - trim margins:
+#   pdfcrop
 
 mkdir temp
 cd temp
@@ -47,6 +51,10 @@ read continue
 
 # Calibre
 sudo python -c "import sys; py3 = sys.version_info[0] > 2; u = __import__('urllib.request' if py3 else 'urllib', fromlist=1); exec(u.urlopen('http://status.calibre-ebook.com/linux_installer').read()); main(install_dir='/opt')"
+wget https://raw.github.com/danielgtaylor/kindledecrypt/master/mobidedrm.py
+mv mobidedrm.py _plugin.py
+zip mobidedrm.zip _plugin.py
+
 
 #indicators
 # indicator-keylock indicator-multiload
@@ -56,7 +64,7 @@ sudo apt-get update
 sudo apt-get install indicator-multiload indicator-keylock
 
 
-sudo apt-get install gnote anki audacious audacity mc cheese-common doxygen doxygen-latex kile texlive-lang-polish git gnote gnuplot goldendict gparted guake inkscape k3b libk3b6-extracodecs sox manpages-pl manpages-pl-dev manpages-posix manpages-posix-dev mplayer okular openjdk-7-jre php5-cli php5-common rhino ruby pidgin samba skype virtualbox vlc wine exuberant-ctags account-plugin-gadugadu compizconfig-settings-manager gimp gimp-plugin-registry touchegg vim-gnome whois build-essential imagemagick wammu
+sudo apt-get install gnote anki audacious audacity mc cheese-common doxygen doxygen-latex kile texlive-lang-polish git gnote gnuplot-x11 goldendict gparted guake inkscape k3b libk3b6-extracodecs sox manpages-pl manpages-pl-dev manpages-posix manpages-posix-dev mplayer okular openjdk-7-jre php5-cli php5-common rhino ruby pidgin samba skype virtualbox vlc exuberant-ctags account-plugin-gadugadu compizconfig-settings-manager gimp gimp-plugin-registry touchegg vim-gnome whois build-essential imagemagick wammu wine filezilla
 
 sudo apt-get remove rhythmbox
 
