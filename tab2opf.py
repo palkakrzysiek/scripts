@@ -271,7 +271,7 @@ for r in fr.xreadlines():
         </h2>
         %s
       </idx:entry>
-      <mbp:pagebreak/>
+      <hr />
 """ % (dt, odm[dt.lower()], dtstrip, dd))
     print dt
     i += 1
