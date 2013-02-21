@@ -4,20 +4,12 @@
 # Script for conversion of Stardict tabfile (<header>\t<definition>
 # per line) into the OPF file for MobiPocket Dictionary
 #
-# For usage of dictionary convert it by:
-# (wine) mobigen.exe DICTIONARY.opf
-#
-# MobiPocket Reader at: www.mobipocket.com for platforms:
-#   PalmOs, Windows Mobile, Symbian (Series 60, Series 80, 90, UIQ), Psion, Blackberry, Franklin, iLiad (by iRex), BenQ-Siemens, Pepper Pad..
-#   http://www.mobipocket.com/en/DownloadSoft/DownloadManualInstall.asp
-# mobigen.exe available at:
-#   http://www.mobipocket.com/soft/prcgen/mobigen.zip
-#
 # Copyright (C) 2007 - Klokan Petr Přidal (www.klokan.cz)
-#
+# Modified (2013) by Krzysiek Palka
 #
 # Version history:
 # 0.1 (19.7.2007) Initial version
+# 0.1.1 (21.2.2013) Added inflection support
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Library General Public
@@ -35,9 +27,12 @@
 # Boston, MA 02111-1307, USA.
 
 # VERSION
-VERSION = "0.1"
+VERSION = "0.1.1"
 
-# FILENAME is a first parameter on the commandline now
+# Necessary files:
+# - slo.tab - dictionary in format headword 1[tab]definition 1[new line]headword 2[tab]definiton2
+# - odm.txt - inflections in format: base of word 1, inflection 1, inflection 2[new line]base of word 2, inflection 1
+# script doesn't require parameters, name of files are fixed (slo.tab and odm.txt) and encoding as UTF-8 is forced 
 
 import sys
 import re
