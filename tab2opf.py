@@ -32,7 +32,7 @@ VERSION = "0.1.1"
 # Necessary files:
 # - slo.tab - dictionary in format headword 1[tab]definition 1[new line]headword 2[tab]definiton2
 # - odm.txt - inflections in format: base of word 1, inflection 1, inflection 2[new line]base of word 2, inflection 1
-# script doesn't require parameters, name of files are fixed (slo.tab and odm.txt) and encoding as UTF-8 is forced 
+# script doesn't require parameters, names of files are fixed (slo.tab and odm.txt) and encoding as UTF-8 is forced 
 
 import sys
 import re
