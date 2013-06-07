@@ -184,3 +184,15 @@ restarts all the networks services :
 To see your various network interfaces, use the command: 
 
 /sbin/ifconfig -a
+
+
+
+
+
+
+# Mount a temporary ram partition
+mount -t tmpfs tmpfs /mnt -o size=1024m
+
+# combine pdfs
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=finished.pdf file1 file 2
+convert .jpg output.pdf

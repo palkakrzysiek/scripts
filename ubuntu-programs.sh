@@ -20,6 +20,11 @@ sudo add-apt-repository ppa:bumblebee/stable
 sudo apt-get update
 sudo apt-get install bumblebee bumblebee-nvidia linux-headers-generic
 
+# feedly
+sudo add-apt-repository ppa:unity-webapps-feedly/stable
+sudo apt-get update
+sudo apt-get install unity-webapps-feedly
+
 # sudo fdisk -l
 echo "/dev/sda6	/media/dokumenty	ntfs	defaults	0	0" >> /etc/fstab
 
@@ -32,6 +37,8 @@ echo "tray: dconf: Com > Canonical > Desktop > Unity > Panel to ['all']"
 
 echo -n "press <enter> to continue"
 read continue
+
+sudo add-apt-repository "deb http://archive.canonical.com/ precise partner"
 
 
 # google chrome
@@ -64,7 +71,7 @@ sudo apt-get update
 sudo apt-get install indicator-multiload indicator-keylock
 
 
-sudo apt-get install gnote anki audacious audacity mc cheese-common doxygen doxygen-latex kile texlive-lang-polish git gnote gnuplot-x11 goldendict gparted guake inkscape k3b libk3b6-extracodecs sox manpages-pl manpages-pl-dev manpages-posix manpages-posix-dev mplayer okular openjdk-7-jre php5-cli php5-common rhino ruby pidgin samba skype virtualbox vlc exuberant-ctags account-plugin-gadugadu compizconfig-settings-manager gimp gimp-plugin-registry touchegg vim-gnome whois build-essential imagemagick wammu wine filezilla
+sudo apt-get install gnote anki audacious audacity mc cheese-common doxygen doxygen-latex kile texlive-lang-polish git gnote gnuplot-x14 goldendict gparted guake inkscape k3b libk3b6-extracodecs sox manpages-pl manpages-pl-dev manpages-posix manpages-posix-dev mplayer okular openjdk-7-jre php5-cli php5-common rhino ruby pidgin samba skype virtualbox vlc exuberant-ctags account-plugin-gadugadu compizconfig-settings-manager gimp gimp-plugin-registry touchegg vim-gnome whois build-essential imagemagick wammu wine filezilla kdenlive p7zip qnapi qcad gconf-editor easytag unetbootin sound-juicer acidrip icedtea-7-plugin clementine gscan2pdf
 
 sudo apt-get remove rhythmbox
 

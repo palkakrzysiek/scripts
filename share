@@ -1,0 +1,2 @@
+sudo iptables -t nat -A POSTROUTING -s 10.10.0.0/16 -o "$1" -j MASQUERADE
+sudo hostapd /etc/hostapd/hostapd.conf
