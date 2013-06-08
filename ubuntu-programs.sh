@@ -70,8 +70,13 @@ sudo add-apt-repository ppa:indicator-multiload/stable-daily
 sudo apt-get update
 sudo apt-get install indicator-multiload indicator-keylock
 
+sudo add-apt-repository ppa:tsbarnes/indicator-keylock-daily
+sudo add-apt-repository ppa:indicator-multiload/stable-daily 
+sudo add-apt-repository ppa:jd-team/jdownloader
+sudo add-apt-repository ppa:freefilesync/ffs
+sudo apt-get install indicator-multiload indicator-keylock freefilesync
 
-sudo apt-get install gnote anki audacious audacity mc cheese-common doxygen doxygen-latex kile texlive-lang-polish git gnote gnuplot-x14 goldendict gparted guake inkscape k3b libk3b6-extracodecs sox manpages-pl manpages-pl-dev manpages-posix manpages-posix-dev mplayer okular openjdk-7-jre php5-cli php5-common rhino ruby pidgin samba skype virtualbox vlc exuberant-ctags account-plugin-gadugadu compizconfig-settings-manager gimp gimp-plugin-registry touchegg vim-gnome whois build-essential imagemagick wammu wine filezilla kdenlive p7zip qnapi qcad gconf-editor easytag unetbootin sound-juicer acidrip icedtea-7-plugin clementine gscan2pdf
+sudo apt-get install ssh gnote anki audacity mc skype cheese-common doxygen doxygen-latex kile texlive-lang-polish git gnote gnuplot-x11 goldendict gparted guake inkscape k3b libk3b6-extracodecs sox manpages-pl manpages-pl-dev manpages-posix manpages-posix-dev mplayer okular openjdk-7-jre php5-cli php5-common rhino ruby pyflakes pidgin samba skype virtualbox exuberant-ctags gimp gimp-plugin-registry touchegg vim-gnome whois build-essential imagemagick wammu wine filezilla kdenlive p7zip qnapi qcad easytag unetbootin sound-juicer acidrip default-jdk icedtea-7-plugin clementine gscan2pdf jdownloader indicator-multiload vim-gnome git indicator-keylock wine vlc acroread freefilesync
 
 sudo apt-get remove rhythmbox
 
