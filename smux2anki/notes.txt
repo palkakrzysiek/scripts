@@ -1,0 +1,2 @@
+rozpakować kurs główny, następnie pathca, utworzyć nowy folder, skopiować
+media z głównego kursu, dołączyć te z patcha, skopiować pliki xml z patcha 
