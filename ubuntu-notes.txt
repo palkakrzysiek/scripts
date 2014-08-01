@@ -1,3 +1,11 @@
+VMWare
+======
+sudo vmware-modconfig --console --install-all
+
+Fonts
+=====
+sudo fc-cache -f -v
+
 
 Network
 =======
