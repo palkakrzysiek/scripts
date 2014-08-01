@@ -70,6 +70,11 @@ sudo add-apt-repository ppa:indicator-multiload/stable-daily
 sudo apt-get update
 sudo apt-get install indicator-multiload indicator-keylock
 
+sudo add-apt-repository ppa:tsbarnes/indicator-keylock-daily
+sudo add-apt-repository ppa:indicator-multiload/stable-daily 
+sudo add-apt-repository ppa:jd-team/jdownloader
+sudo add-apt-repository ppa:freefilesync/ffs
+sudo apt-get install indicator-multiload indicator-keylock freefilesync
 
 sudo apt-get install gnote anki audacious audacity mc cheese-common doxygen \
 doxygen-latex kile texlive-lang-polish git gnote gnuplot-x14 goldendict \
