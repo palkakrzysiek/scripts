@@ -110,6 +110,7 @@ echo 'git config --global user.name "Your Name"'
 echo "git config --global user.email you@example.com"
 git config --global alias.lola "log --graph --decorate \
 --pretty=oneline --abbrev-commit --all"
+git config --global color.ui auto
 git config --global alias.ci commit
 git config --global alias.co checkout
 git config --global alias.st status
