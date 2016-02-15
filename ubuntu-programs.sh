@@ -114,6 +114,8 @@ git config --global color.ui auto
 git config --global alias.ci commit
 git config --global alias.co checkout
 git config --global alias.st status
+git config --global alias.his "log --pretty=format:'%h %Cgreen%cD %Cblue%cn %C(yellow)<%ce> %Creset %s'"
+
 
 
 
