@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$#" == 0 ] || [ "$1" = "start" ]; then
+  echo "Starting mic loopback "
+  pactl load-module module-loopback latency_msec=1
+elif [ "$1" = "stop" ]; then
+  echo "Stopping mic loopback "
+  pactl unload-module module-loopback
+else
+  echo "Unrecognized command"
+fi

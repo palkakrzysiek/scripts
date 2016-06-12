@@ -113,7 +113,6 @@ if !exists('g:neocomplcache_keyword_patterns')
     " Plugin key-mappings.
     inoremap <expr><C-g>     neocomplcache#undo_completion()
     inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
     " Recommended key-mappings.
     " <CR>: close popup and save indent.
     inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -284,6 +283,6 @@ set directory=~/.vimbackup//,/tmp//
 
 
 " Nerdcommenter ]<leader>ci
-" Surround cs{[, ysiw], VS{ 
+" Surround cs{[, ysiw], VS{
 " Closetag <C-_>
 " Indent guides ,ig

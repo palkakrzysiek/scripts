@@ -1,0 +1,20 @@
+# /bin/sh
+
+echo ""
+echo "local"
+ls -go ~/Anki/Krzysiek/collection.anki2
+echo "remote"
+ls -go /media/krzysiek/6264-3665/AnkiDroid/collection.anki2
+echo "Hit enter to continue"
+read
+
+cp -v /media/krzysiek/6264-3665/AnkiDroid/collection.anki2 ~/Anki/Krzysiek/collection.anki2
+zip ~/Anki/Krzysiek/bu/backup_`date +%F_%T`.zip ~/Anki/Krzysiek/collection.anki2
+
+echo ""
+echo -n "backups: "
+du -h ~/Anki/Krzysiek/bu
+echo -n "count: "
+ls ~/Anki/Krzysiek/bu/backup* | wc -l
+echo -e "---Last 10 backups---"
+ls -goh ~/Anki/Krzysiek/bu/backup* | tail -n 10
