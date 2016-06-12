@@ -180,11 +180,7 @@ git config --global alias.co checkout
 git config --global alias.st status
 git config --global alias.his "log --pretty=format:'%h %Cgreen%cD %Cblue%cn %C(yellow)<%ce> %Creset %s'"
 
-
-
-~/.zshrc
-
-alias ccat='pygmentize -g'
+echo "alias ccat='pygmentize -g'" > ~/.zshrc
 
 echo "setxkbmap 'pl(intl)'" > pl && chmod +x pl && sudo mv pl /usr/bin/pl
 
