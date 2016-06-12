@@ -182,6 +182,9 @@ git config --global alias.his "log --pretty=format:'%h %Cgreen%cD %Cblue%cn %C(y
 
 echo "alias ccat='pygmentize -g'" >> ~/.zshrc
 
+curl http://j.mp/spf13-vim3 -L -o - | sh
+echo "set spell spelllang=en_us,pl" >> ~/.vimrc.local
+
 echo "setxkbmap 'pl(intl)'" > pl && chmod +x pl && sudo mv pl /usr/bin/pl
 
 # vim
