@@ -114,6 +114,8 @@ hunspell hunspell-tools \
 ubuntu-restricted-extras \
 oracle-java8-set-default \
 mplayer2 \
+texlive-fonts-extra \
+texlive-xetex \
 ttf-mscorefonts-installer
 
 sudo apt-get -yV remove rhythmbox
